@@ -18,7 +18,7 @@ while (input != "NO")
     //Accept user input
     input = Console.ReadLine();
 
-    bool check = int.TryParse(input, out int result);
+    bool check = byte.TryParse(input, out byte result);
 
     //To check input by user
 
@@ -48,35 +48,35 @@ while (input != "NO")
             case 1:
                 Console.WriteLine("Enter your task for Monday: "); 
                 task1 = Console.ReadLine();
-                Console.WriteLine($"Task added is: {task1}");
+                //Console.WriteLine($"Task added is: {task1}");
                 output.Add(task1);
                 break;
 
             case 2:
                 Console.WriteLine("Enter your task for Tuesday: ");
                 task1 = Console.ReadLine();
-                Console.WriteLine($"Task added is: {task1}");
+                //Console.WriteLine($"Task added is: {task1}");
                 output.Add(task1);
                 break;
 
             case 3:
                 Console.WriteLine("Enter your task for Wednesday: ");
                 task1 = Console.ReadLine();
-                Console.WriteLine($"Task added is: {task1}");
+                //Console.WriteLine($"Task added is: {task1}");
                 output.Add(task1);
                 break;
 
             case 4:
                 Console.WriteLine("Enter your task for Thursday: ");
                 task1 = Console.ReadLine();
-                Console.WriteLine($"Task added is: {task1}");
+                //Console.WriteLine($"Task added is: {task1}");
                 output.Add(task1);
                 break;
 
             case 5:
                 Console.WriteLine("Enter your task for Friday: ");
                 task1 = Console.ReadLine();
-                Console.WriteLine($"Task added is: {task1}");
+                //Console.WriteLine($"Task added is: {task1}");
                 output.Add(task1);
                 break;
 
@@ -106,6 +106,13 @@ while (input != "NO")
         Console.WriteLine("Your task will be printed later.");
     }
 
-    Console.WriteLine("Do you want to add More Task? Type 'Yes' or 'No': ");
+   
+    //To change the display to white
+    Console.ForegroundColor = ConsoleColor.White;
+
+    Console.WriteLine("To stop adding, enter 'NO', otherwise, enter any other character : ");
     input = Console.ReadLine() ;
+
+    //To change the display to Green again
+    Console.ForegroundColor = ConsoleColor.Green;
 }
