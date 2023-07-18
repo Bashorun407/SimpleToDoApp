@@ -9,20 +9,20 @@ namespace ToDoApp
     public class ToDoClass
     {
         private string? whatToDo;
-        private string? timeToDo;
+        private TimeOnly timeToDo;
 
-        public ToDoClass(string? whatToDo, string? timeToDo)
+        //Class constructor
+        public ToDoClass( string? whatToDo, TimeOnly time)
         {
+            
             this.whatToDo = whatToDo;
-            this.timeToDo = timeToDo;
+            this.timeToDo = time;
         }
 
-        public static void PrintTask(List<string> strings)
+        public override string ToString()
         {
-            foreach (var item in strings)
-            {
-                Console.WriteLine(item);
-            }
+            return $"Task: {whatToDo}, time: {timeToDo}";
         }
+
     }
 }

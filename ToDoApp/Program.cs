@@ -7,8 +7,9 @@ Console.WriteLine("WELCOME TO OUR TODO APP");
 //To display code output in colour green
 Console.ForegroundColor = ConsoleColor.Green;
 string input = string.Empty;
-//List<ToDoClass> todo = new List<ToDoClass> { };
-List<string> output = new List<string>();
+
+//output will be our in-built memory
+List<ToDoClass> output = new List<ToDoClass>();
 
 while (input != "NO")
 {
@@ -40,44 +41,27 @@ while (input != "NO")
 
     else
     {
-        //Using Switch for numbers from  1 - 7
-        string task1 = string.Empty;
 
         switch (result)
         {
             case 1:
-                Console.WriteLine("Enter your task for Monday: "); 
-                task1 = Console.ReadLine();
-                //Console.WriteLine($"Task added is: {task1}");
-                output.Add(task1);
+                MethodClass.RequiredTask("Monday", output);
                 break;
 
             case 2:
-                Console.WriteLine("Enter your task for Tuesday: ");
-                task1 = Console.ReadLine();
-                //Console.WriteLine($"Task added is: {task1}");
-                output.Add(task1);
+                MethodClass.RequiredTask("Tuesday", output);
                 break;
 
             case 3:
-                Console.WriteLine("Enter your task for Wednesday: ");
-                task1 = Console.ReadLine();
-                //Console.WriteLine($"Task added is: {task1}");
-                output.Add(task1);
+                Console.WriteLine("Wednesdays are for Assessments");
                 break;
 
             case 4:
-                Console.WriteLine("Enter your task for Thursday: ");
-                task1 = Console.ReadLine();
-                //Console.WriteLine($"Task added is: {task1}");
-                output.Add(task1);
+                MethodClass.RequiredTask("Thurday", output);
                 break;
 
             case 5:
-                Console.WriteLine("Enter your task for Friday: ");
-                task1 = Console.ReadLine();
-                //Console.WriteLine($"Task added is: {task1}");
-                output.Add(task1);
+                MethodClass.RequiredTask("Friday", output);
                 break;
 
             case 6:
@@ -94,11 +78,11 @@ while (input != "NO")
     input = Console.ReadLine();
     check = int.TryParse(input, out int x);
 
-    if (x == 1)
+    if (check)
     {
         //To display tasks to the console
-        Console.WriteLine("\n\n Your tasks for the week are: \n");
-        ToDoClass.PrintTask(output);
+        Console.WriteLine("Your tasks for the week are: \n");
+        MethodClass.PrintTask(output);
     }
 
     else
